@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://c0yw1dowah4pv"]
+[gd_scene load_steps=5 format=3 uid="uid://c0yw1dowah4pv"]
+
+[ext_resource type="Script" uid="uid://cyp8y6xlqa0e1" path="res://normal.gd" id="1_0e48y"]
+[ext_resource type="AudioStream" uid="uid://c5g7f81jh0ubj" path="res://ytmp3free.cc_meow-sound-effect-youtubemp3free.org.mp3" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://bt6rusikfckev" path="res://looped.gd" id="3_0hol4"]
+[ext_resource type="AudioStream" uid="uid://dc3x1h2erv00r" path="res://ytmp3free.cc_deep-meow-sound-effect-youtubemp3free.org.mp3" id="4_q6r6c"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="normal" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 10.0
+offset_right = 628.0
+offset_bottom = 140.0
+text = "normal
+"
+script = ExtResource("1_0e48y")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="normal"]
+stream = ExtResource("2_0e48y")
+
+[node name="looped" type="Button" parent="."]
+offset_left = 495.0
+offset_top = 502.0
+offset_right = 635.0
+offset_bottom = 630.0
+text = "Looped
+"
+script = ExtResource("3_0hol4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="looped"]
+stream = ExtResource("4_q6r6c")
+
+[connection signal="pressed" from="normal" to="normal" method="_on_pressed"]
+[connection signal="pressed" from="looped" to="normal" method="_on_looped_pressed"]
+[connection signal="pressed" from="looped" to="looped" method="_on_pressed"]
+[connection signal="toggled" from="looped" to="looped" method="_on_toggled"]

@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="rada_tp1"
+run/main_scene="uid://c0yw1dowah4pv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [rendering]
 
