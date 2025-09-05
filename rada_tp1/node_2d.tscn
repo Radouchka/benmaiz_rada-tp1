@@ -1,35 +1,140 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0yw1dowah4pv"]
+[gd_scene load_steps=20 format=3 uid="uid://c0yw1dowah4pv"]
 
 [ext_resource type="Script" uid="uid://cyp8y6xlqa0e1" path="res://normal.gd" id="1_0e48y"]
-[ext_resource type="AudioStream" uid="uid://c5g7f81jh0ubj" path="res://ytmp3free.cc_meow-sound-effect-youtubemp3free.org.mp3" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://cyuk56ee0vpho" path="res://assets/images/background.png" id="1_d21ai"]
+[ext_resource type="AudioStream" uid="uid://bfol6y7s0eien" path="res://assets/audio/ytmp3free.cc_meow-sound-effect-youtubemp3free.org.mp3" id="2_0e48y"]
 [ext_resource type="Script" uid="uid://bt6rusikfckev" path="res://looped.gd" id="3_0hol4"]
-[ext_resource type="AudioStream" uid="uid://dc3x1h2erv00r" path="res://ytmp3free.cc_deep-meow-sound-effect-youtubemp3free.org.mp3" id="4_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://cy3tfdho2vyly" path="res://assets/images/chat b (1).png" id="3_kdubu"]
+[ext_resource type="AudioStream" uid="uid://cffmofyxapy4o" path="res://assets/audio/ytmp3free.cc_deep-meow-sound-effect-youtubemp3free.org.mp3" id="4_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://cl6jq43pj48lg" path="res://assets/images/chat a (1).png" id="5_q6r6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
+atlas = ExtResource("3_kdubu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
+atlas = ExtResource("3_kdubu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
+atlas = ExtResource("3_kdubu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("3_kdubu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("3_kdubu")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2bti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir8iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqns4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0ka3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqns4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6r6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdubu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d21ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj586")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d7sh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.875, 325)
+scale = Vector2(0.85632, 0.978979)
+texture = ExtResource("1_d21ai")
+
 [node name="normal" type="Button" parent="."]
-offset_left = 493.0
-offset_top = 10.0
-offset_right = 628.0
-offset_bottom = 140.0
-text = "normal
+offset_left = 343.0
+offset_top = 406.0
+offset_right = 378.0
+offset_bottom = 460.0
+text = "nor
+
 "
 script = ExtResource("1_0e48y")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="normal"]
-stream = ExtResource("2_0e48y")
+stream = ExtResource("4_q6r6c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="normal"]
+position = Vector2(22, 4.00002)
+scale = Vector2(2.26758, 2.34399)
+sprite_frames = SubResource("SpriteFrames_d2bti")
 
 [node name="looped" type="Button" parent="."]
-offset_left = 495.0
-offset_top = 502.0
-offset_right = 635.0
-offset_bottom = 630.0
-text = "Looped
+offset_left = 818.0
+offset_top = 417.0
+offset_right = 865.0
+offset_bottom = 455.0
+text = "Loop
 "
 script = ExtResource("3_0hol4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="looped"]
-stream = ExtResource("4_q6r6c")
+stream = ExtResource("2_0e48y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="looped"]
+position = Vector2(22, -16)
+scale = Vector2(2.1875, 2.24512)
+sprite_frames = SubResource("SpriteFrames_hqns4")
 
 [connection signal="pressed" from="normal" to="normal" method="_on_pressed"]
 [connection signal="pressed" from="looped" to="normal" method="_on_looped_pressed"]
