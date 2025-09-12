@@ -1,7 +1,3 @@
 extends Button
- 
-@onready var sprite_anim = $"AnimatedSprite2D"
- 
 func _on_pressed() -> void:
 	$AudioStreamPlayer2D.play()
- 

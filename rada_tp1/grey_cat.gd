@@ -1,13 +1,7 @@
 extends Button
- 
-var frame = 0;
-const totalfr = 5;
- 
- 
+
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		$AudioStreamPlayer2D.play()
 	else:
 		$AudioStreamPlayer2D.stop()
-	pass
-	
